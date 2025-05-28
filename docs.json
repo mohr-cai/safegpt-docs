@@ -49,24 +49,6 @@
         ]
       },
       {
-        "tab": "Einstellungen & Admin",
-        "groups": [
-          {
-            "group": "Benutzereinstellungen",
-            "pages": [
-              "settings/account"
-            ]
-          },
-          {
-            "group": "Administration",
-            "pages": [
-              "admin/rollout-setup",
-              "admin/rollout-playbook"
-            ]
-          }
-        ]
-      },
-      {
         "tab": "Sicherheit & Compliance",
         "groups": [
           {
