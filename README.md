@@ -1,31 +1,31 @@
-# BusinessGPT Documentation
+# BusinessGPT Dokumentation
 
-This repository contains the documentation for BusinessGPT powered by Eraneos. The documentation includes:
+Dieses Repository enthält die Dokumentation für BusinessGPT powered by Eraneos. Die Dokumentation umfasst:
 
-- Product features and capabilities
-- API Reference
-- Security and compliance information
-- Getting started guides
+- Produktfunktionen und -fähigkeiten
+- API-Referenz
+- Sicherheits- und Compliance-Informationen
+- Erste Schritte Anleitungen
 
-### Development
+### Entwicklung
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
+Installieren Sie die [Mintlify CLI](https://www.npmjs.com/package/mintlify), um Dokumentationsänderungen lokal zu überprüfen. Verwenden Sie zur Installation den folgenden Befehl
 
 ```
 npm i -g mintlify
 ```
 
-Run the following command at the root of your documentation (where docs.json is)
+Führen Sie den folgenden Befehl im Stammverzeichnis Ihrer Dokumentation aus (wo sich docs.json befindet)
 
 ```
 mintlify dev
 ```
 
-### Publishing Changes
+### Änderungen veröffentlichen
 
-Install our Github App to auto propagate changes from your repo to your deployment. Changes will be deployed to production automatically after pushing to the default branch. Find the link to install on your dashboard. 
+Installieren Sie unsere Github App, um Änderungen von Ihrem Repository automatisch in Ihr Deployment zu übertragen. Änderungen werden nach dem Push zum Standardbranch automatisch in die Produktion übernommen. Den Link zur Installation finden Sie in Ihrem Dashboard.
 
-#### Troubleshooting
+#### Fehlerbehebung
 
-- Mintlify dev isn't running - Run `mintlify install` it'll re-install dependencies.
-- Page loads as a 404 - Make sure you are running in a folder with `docs.json`
+- Mintlify dev läuft nicht - Führen Sie `mintlify install` aus, um die Abhängigkeiten neu zu installieren.
+- Seite wird als 404 geladen - Stellen Sie sicher, dass Sie in einem Ordner mit `docs.json` arbeiten

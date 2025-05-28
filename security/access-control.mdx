@@ -1,138 +1,137 @@
 ---
-title: 'Access Control'
-description: 'Authentication, authorization, and user management in BusinessGPT'
+title: 'Zugriffskontrolle'
+description: 'Authentifizierung, Autorisierung und Benutzerverwaltung in BusinessGPT'
 ---
 
-# Access Control in BusinessGPT
+# Zugriffskontrolle in BusinessGPT
 
-## Authentication
+## Authentifizierung
 
-BusinessGPT implements robust authentication mechanisms to ensure that only authorized users can access the platform:
+BusinessGPT implementiert robuste Authentifizierungsmechanismen, um sicherzustellen, dass nur autorisierte Benutzer auf die Plattform zugreifen können:
 
 ### Single Sign-On (SSO)
 
 <AccordionGroup>
   <Accordion icon="key" title="Azure AD Integration">
-    BusinessGPT integrates seamlessly with Azure Active Directory, allowing organizations to:
-    - Use existing corporate identities
-    - Apply consistent access policies
-    - Enforce password complexity requirements
-    - Implement conditional access policies
+    BusinessGPT integriert sich nahtlos mit Azure Active Directory und ermöglicht Organisationen:
+    - Bestehende Unternehmensidentitäten zu nutzen
+    - Konsistente Zugriffsrichtlinien anzuwenden
+    - Anforderungen an die Passwortkomplexität durchzusetzen
+    - Bedingte Zugriffsrichtlinien zu implementieren
   </Accordion>
-  <Accordion icon="shield-check" title="Multi-Factor Authentication (MFA)">
-    All users are required to use multi-factor authentication, which provides:
-    - An additional layer of security beyond passwords
-    - Protection against credential theft and phishing attacks
-    - Compliance with security best practices and regulations
-    - Support for various authentication methods (authenticator apps, SMS, etc.)
+  <Accordion icon="shield-check" title="Multi-Faktor-Authentifizierung (MFA)">
+    Alle Benutzer müssen die Multi-Faktor-Authentifizierung verwenden, die Folgendes bietet:
+    - Eine zusätzliche Sicherheitsebene über Passwörter hinaus
+    - Schutz vor Anmeldedatendiebstahl und Phishing-Angriffen
+    - Einhaltung von Sicherheits-Best-Practices und Vorschriften
+    - Unterstützung für verschiedene Authentifizierungsmethoden (Authenticator-Apps, SMS usw.)
   </Accordion>
 </AccordionGroup>
 
-### Session Management
+### Sitzungsverwaltung
 
-BusinessGPT implements secure session management practices:
+BusinessGPT implementiert sichere Sitzungsverwaltungspraktiken:
 
-- Secure, HTTP-only cookies with appropriate security flags
-- Automatic session timeout after periods of inactivity
-- Session invalidation upon logout
-- Protection against session fixation attacks
+- Sichere, HTTP-only Cookies mit entsprechenden Sicherheitsflags
+- Automatisches Sitzungs-Timeout nach Inaktivitätsperioden
+- Sitzungsungültigkeit bei Abmeldung
+- Schutz vor Session-Fixation-Angriffen
 
-## Authorization
+## Autorisierung
 
-BusinessGPT uses a comprehensive role-based access control (RBAC) system to ensure users can only access the resources and perform the actions they are authorized for:
+BusinessGPT verwendet ein umfassendes rollenbasiertes Zugriffskontrollsystem (RBAC), um sicherzustellen, dass Benutzer nur auf die Ressourcen zugreifen und die Aktionen ausführen können, für die sie autorisiert sind:
 
-### Role-Based Access Control
+### Rollenbasierte Zugriffskontrolle
 
 <CardGroup cols={3}>
-  <Card title="Owner" icon="crown">
-    Full control over resources, including user management and deletion
+  <Card title="Besitzer" icon="crown">
+    Vollständige Kontrolle über Ressourcen, einschließlich Benutzerverwaltung und Löschung
   </Card>
-  <Card title="Editor" icon="pen-to-square">
-    Can create, modify, and collaborate on content
+  <Card title="Bearbeiter" icon="pen-to-square">
+    Kann Inhalte erstellen, ändern und zusammenarbeiten
   </Card>
-  <Card title="Viewer" icon="eye">
-    Read-only access to designated resources
+  <Card title="Betrachter" icon="eye">
+    Nur-Lese-Zugriff auf bestimmte Ressourcen
   </Card>
 </CardGroup>
 
-### Permission Levels
+### Berechtigungsebenen
 
-Access control is implemented at multiple levels:
+Die Zugriffskontrolle wird auf mehreren Ebenen implementiert:
 
-1. **Organization Level**
-   - Controls who can access the organization's BusinessGPT instance
-   - Manages organization-wide settings and policies
+1. **Organisationsebene**
+   - Kontrolliert, wer auf die BusinessGPT-Instanz der Organisation zugreifen kann
+   - Verwaltet organisationsweite Einstellungen und Richtlinien
 
-2. **Project Level**
-   - Determines who can access specific projects
-   - Controls project-specific settings and configurations
+2. **Projektebene**
+   - Bestimmt, wer auf bestimmte Projekte zugreifen kann
+   - Steuert projektspezifische Einstellungen und Konfigurationen
 
-3. **Resource Level**
-   - Governs access to individual chats, documents, and other resources
-   - Enables fine-grained sharing and collaboration
+3. **Ressourcenebene**
+   - Regelt den Zugriff auf einzelne Chats, Dokumente und andere Ressourcen
+   - Ermöglicht detaillierte Freigabe und Zusammenarbeit
 
-## User Management
+## Benutzerverwaltung
 
-BusinessGPT provides comprehensive user management capabilities:
+BusinessGPT bietet umfassende Benutzerverwaltungsfunktionen:
 
-### User Provisioning
+### Benutzerbereitstellung
 
 <AccordionGroup>
-  <Accordion icon="user-plus" title="User Onboarding">
-    - Automated user provisioning through Azure AD
-    - Invitation-based user registration
-    - Self-service account creation (if enabled)
-    - Initial role assignment
+  <Accordion icon="user-plus" title="Benutzer-Onboarding">
+    - Automatisierte Benutzerbereitstellung über Azure AD
+    - Einladungsbasierte Benutzerregistrierung
+    - Selbstbedienungskonto-Erstellung (falls aktiviert)
+    - Anfängliche Rollenzuweisung
   </Accordion>
-  <Accordion icon="user-minus" title="User Offboarding">
-    - Immediate access revocation
-    - Data transfer options for user content
-    - Audit trail of user activities
-    - Compliance with data retention policies
+  <Accordion icon="user-minus" title="Benutzer-Offboarding">
+    - Sofortiger Widerruf des Zugriffs
+    - Datenübertragungsoptionen für Benutzerinhalte
+    - Prüfpfad der Benutzeraktivitäten
+    - Einhaltung von Datenaufbewahrungsrichtlinien
   </Accordion>
 </AccordionGroup>
 
-### User Administration
+### Benutzerverwaltung
 
-Administrators have access to powerful user management tools:
+Administratoren haben Zugriff auf leistungsstarke Benutzerverwaltungstools:
 
-- User activity monitoring and reporting
-- Role and permission management
-- Access policy enforcement
-- Bulk user operations
+- Überwachung und Berichterstattung über Benutzeraktivitäten
+- Rollen- und Berechtigungsverwaltung
+- Durchsetzung von Zugriffsrichtlinien
+- Massenbenutzeroperationen
 
-## Audit and Compliance
+## Audit und Compliance
 
-BusinessGPT maintains comprehensive audit logs to track access and actions:
+BusinessGPT führt umfassende Auditprotokolle, um Zugriffe und Aktionen zu verfolgen:
 
-- Authentication events (successful and failed login attempts)
-- Authorization decisions
-- Resource access and modifications
-- Administrative actions
+- Authentifizierungsereignisse (erfolgreiche und fehlgeschlagene Anmeldeversuche)
+- Autorisierungsentscheidungen
+- Ressourcenzugriff und -änderungen
+- Administrative Aktionen
 
-These logs can be:
-- Retained according to configurable retention policies
-- Exported for compliance reporting
-- Integrated with SIEM systems (for Enterprise customers)
-- Used for security incident investigation
+Diese Protokolle können:
+- Gemäß konfigurierbaren Aufbewahrungsrichtlinien aufbewahrt werden
+- Für Compliance-Berichte exportiert werden
+- Mit SIEM-Systemen integriert werden (für Enterprise-Kunden)
+- Für die Untersuchung von Sicherheitsvorfällen verwendet werden
 
 ## Best Practices
 
-We recommend the following access control best practices:
+Wir empfehlen die folgenden Best Practices für die Zugriffskontrolle:
 
-1. **Implement the principle of least privilege**
-   - Assign users the minimum permissions needed for their role
-   - Regularly review and adjust permissions as needed
+1. **Implementierung des Prinzips der geringsten Berechtigung**
+   - Weisen Sie Benutzern die minimalen Berechtigungen zu, die für ihre Rolle erforderlich sind
+   - Überprüfen und passen Sie Berechtigungen regelmäßig nach Bedarf an
 
-2. **Enforce strong authentication**
-   - Require MFA for all users
-   - Set appropriate password policies
+2. **Durchsetzung starker Authentifizierung**
+   - MFA für alle Benutzer erforderlich machen
+   - Angemessene Passwortrichtlinien festlegen
 
-3. **Regular access reviews**
-   - Periodically audit user accounts and permissions
-   - Remove access for departed employees promptly
+3. **Regelmäßige Zugriffsüberprüfungen**
+   - Regelmäßige Überprüfung von Benutzerkonten und Berechtigungen
+   - Umgehende Entfernung des Zugriffs für ausgeschiedene Mitarbeiter
 
-4. **Segregation of duties**
-   - Separate administrative responsibilities
-   - Ensure critical actions require multiple approvers
-
+4. **Funktionstrennung**
+   - Trennung administrativer Verantwortlichkeiten
+   - Sicherstellen, dass kritische Aktionen mehrere Genehmiger erfordern

@@ -1,79 +1,79 @@
 ---
-title: 'API Introduction'
-description: 'Integrate BusinessGPT capabilities into your applications'
+title: 'API Einführung'
+description: 'Integrieren Sie BusinessGPT-Funktionen in Ihre Anwendungen'
 ---
 
 # BusinessGPT API
 
-The BusinessGPT API allows you to integrate AI-powered business capabilities directly into your applications, workflows, and systems. With our comprehensive set of endpoints, you can leverage the full power of BusinessGPT programmatically.
+Die BusinessGPT API ermöglicht es Ihnen, KI-gestützte Geschäftsfunktionen direkt in Ihre Anwendungen, Workflows und Systeme zu integrieren. Mit unserem umfassenden Satz an Endpunkten können Sie die volle Leistung von BusinessGPT programmatisch nutzen.
 
-## API Capabilities
+## API-Funktionen
 
 <CardGroup cols={2}>
-  <Card title="Conversational AI" icon="comments">
-    Integrate BusinessGPT's chat capabilities into your applications
+  <Card title="Konversations-KI" icon="comments">
+    Integrieren Sie die Chat-Funktionen von BusinessGPT in Ihre Anwendungen
   </Card>
-  <Card title="Document Processing" icon="file-lines">
-    Process, analyze, and extract information from business documents
+  <Card title="Dokumentenverarbeitung" icon="file-lines">
+    Verarbeiten, analysieren und extrahieren Sie Informationen aus Geschäftsdokumenten
   </Card>
-  <Card title="Data Analysis" icon="chart-line">
-    Generate insights and visualizations from your business data
+  <Card title="Datenanalyse" icon="chart-line">
+    Generieren Sie Erkenntnisse und Visualisierungen aus Ihren Geschäftsdaten
   </Card>
-  <Card title="Workflow Automation" icon="gears">
-    Create intelligent workflows triggered by events and conditions
+  <Card title="Workflow-Automatisierung" icon="gears">
+    Erstellen Sie intelligente Workflows, die durch Ereignisse und Bedingungen ausgelöst werden
   </Card>
 </CardGroup>
 
-## Getting Started
+## Erste Schritte
 
-To use the BusinessGPT API, you'll need:
+Um die BusinessGPT API zu nutzen, benötigen Sie:
 
-1. A BusinessGPT account with API access enabled
-2. An API key for authentication
-3. Understanding of REST API principles
-4. Knowledge of your specific integration requirements
+1. Ein BusinessGPT-Konto mit aktiviertem API-Zugriff
+2. Einen API-Schlüssel zur Authentifizierung
+3. Verständnis der REST-API-Prinzipien
+4. Kenntnis Ihrer spezifischen Integrationsanforderungen
 
-Our API follows RESTful principles and uses standard HTTP methods. All requests and responses are in JSON format.
+Unsere API folgt RESTful-Prinzipien und verwendet Standard-HTTP-Methoden. Alle Anfragen und Antworten sind im JSON-Format.
 
-## Authentication
+## Authentifizierung
 
-All API requests require authentication using API keys. Include your API key in the Authorization header of your requests:
+Alle API-Anfragen erfordern eine Authentifizierung mit API-Schlüsseln. Fügen Sie Ihren API-Schlüssel im Authorization-Header Ihrer Anfragen ein:
 
 ```bash
 Authorization: Bearer YOUR_API_KEY
 ```
 
 <Note>
-  Keep your API keys secure and never expose them in client-side code. Use environment variables or secure vaults to store your keys.
+  Halten Sie Ihre API-Schlüssel sicher und legen Sie sie niemals im Client-seitigen Code offen. Verwenden Sie Umgebungsvariablen oder sichere Tresore, um Ihre Schlüssel zu speichern.
 </Note>
 
-## Rate Limits
+## Ratenbegrenzungen
 
-API usage is subject to rate limits based on your subscription plan:
+Die API-Nutzung unterliegt Ratenbegrenzungen basierend auf Ihrem Abonnementplan:
 
-| Plan | Rate Limit | Burst Limit |
+| Plan | Ratenbegrenzung | Burst-Limit |
 | ---- | ---------- | ----------- |
-| Standard | 60 requests/minute | 100 requests/minute |
-| Professional | 300 requests/minute | 500 requests/minute |
-| Enterprise | Custom | Custom |
+| Standard | 60 Anfragen/Minute | 100 Anfragen/Minute |
+| Professional | 300 Anfragen/Minute | 500 Anfragen/Minute |
+| Enterprise | Individuell | Individuell |
 
-If you exceed your rate limit, the API will return a 429 Too Many Requests response.
+Wenn Sie Ihr Ratenlimit überschreiten, gibt die API eine 429 Too Many Requests-Antwort zurück.
 
-## Error Handling
+## Fehlerbehandlung
 
-The API uses standard HTTP status codes to indicate success or failure:
+Die API verwendet Standard-HTTP-Statuscodes, um Erfolg oder Misserfolg anzuzeigen:
 
-- 2xx: Success
-- 4xx: Client error (invalid request)
-- 5xx: Server error
+- 2xx: Erfolg
+- 4xx: Client-Fehler (ungültige Anfrage)
+- 5xx: Server-Fehler
 
-Error responses include a JSON body with details:
+Fehlerantworten enthalten einen JSON-Body mit Details:
 
 ```json
 {
   "error": {
     "code": "invalid_parameter",
-    "message": "The parameter 'limit' must be a positive integer",
+    "message": "Der Parameter 'limit' muss eine positive Ganzzahl sein",
     "details": {
       "parameter": "limit",
       "value": "-5"
@@ -82,40 +82,40 @@ Error responses include a JSON body with details:
 }
 ```
 
-## API Versioning
+## API-Versionierung
 
-The API is versioned to ensure compatibility as we add new features. Specify the API version in the URL:
+Die API ist versioniert, um die Kompatibilität zu gewährleisten, wenn wir neue Funktionen hinzufügen. Geben Sie die API-Version in der URL an:
 
 ```
 https://api.businessgpt.eraneos.com/v1/chat/completions
 ```
 
-We maintain backward compatibility within major versions.
+Wir gewährleisten Abwärtskompatibilität innerhalb von Hauptversionen.
 
-## SDKs and Libraries
+## SDKs und Bibliotheken
 
-We provide official SDKs for popular programming languages:
+Wir bieten offizielle SDKs für beliebte Programmiersprachen:
 
 <CardGroup cols={3}>
   <Card title="Python SDK" icon="python" href="/api-reference/sdks/python">
-    Ideal for data science and backend applications
+    Ideal für Data Science und Backend-Anwendungen
   </Card>
   <Card title="JavaScript/TypeScript SDK" icon="js" href="/api-reference/sdks/javascript">
-    Perfect for web and Node.js applications
+    Perfekt für Web- und Node.js-Anwendungen
   </Card>
   <Card title="Java SDK" icon="java" href="/api-reference/sdks/java">
-    Great for enterprise applications
+    Hervorragend für Unternehmensanwendungen
   </Card>
 </CardGroup>
 
-## API Reference
+## API-Referenz
 
-Explore our API endpoints:
+Erkunden Sie unsere API-Endpunkte:
 
 <Card
-  title="BusinessGPT API Reference"
+  title="BusinessGPT API-Referenz"
   icon="code"
   href="/api-reference/openapi.json"
 >
-  View the complete OpenAPI specification
+  Vollständige OpenAPI-Spezifikation anzeigen
 </Card>

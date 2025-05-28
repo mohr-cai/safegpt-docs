@@ -11,16 +11,16 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Product",
+        "tab": "Produkt",
         "groups": [
           {
-            "group": "Introduction",
+            "group": "Einführung",
             "pages": [
               "index"
             ]
           },
           {
-            "group": "Features",
+            "group": "Funktionen",
             "pages": [
               "features/chat",
               "features/document-processing",
@@ -33,13 +33,13 @@
             ]
           },
           {
-            "group": "Help & Support",
+            "group": "Hilfe & Support",
             "pages": [
               "features/faq"
             ]
           },
           {
-            "group": "Use Cases",
+            "group": "Anwendungsfälle",
             "pages": [
               "use-cases/business-intelligence",
               "use-cases/customer-support",
@@ -49,10 +49,10 @@
         ]
       },
       {
-        "tab": "Settings & Admin",
+        "tab": "Einstellungen & Admin",
         "groups": [
           {
-            "group": "User Settings",
+            "group": "Benutzereinstellungen",
             "pages": [
               "settings/account"
             ]
@@ -67,17 +67,17 @@
         ]
       },
       {
-        "tab": "Security & Compliance",
+        "tab": "Sicherheit & Compliance",
         "groups": [
           {
-            "group": "Security",
+            "group": "Sicherheit",
             "pages": [
               "security/overview",
               "security/access-control"
             ]
           },
           {
-            "group": "Compliance",
+            "group": "Konformität",
             "pages": [
               "compliance/certifications"
             ]
