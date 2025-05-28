@@ -1,13 +1,13 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "<span style=\"font-size: 0.8em;\">BusinessGPT powered by Eraneos</span>",
+  "name": "BusinessGPT",
   "colors": {
     "primary": "#0066CC",
     "light": "#3399FF",
     "dark": "#004C99"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/eraneos_neg.png",
   "navigation": {
     "tabs": [
       {
@@ -29,7 +29,14 @@
               "features/memory",
               "features/projects",
               "features/web-search",
-              "features/workspaces"
+              "features/workspaces",
+              "features/user-activity"
+            ]
+          },
+          {
+            "group": "Help & Support",
+            "pages": [
+              "features/faq"
             ]
           },
           {
