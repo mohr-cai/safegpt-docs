@@ -1,12 +1,11 @@
-# Mintlify Starter Kit
+# BusinessGPT Documentation
 
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
+This repository contains the documentation for BusinessGPT powered by Eraneos. The documentation includes:
 
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
+- Product features and capabilities
+- API Reference
+- Security and compliance information
+- Getting started guides
 
 ### Development
 

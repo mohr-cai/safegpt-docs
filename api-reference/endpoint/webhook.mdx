@@ -1,4 +1,179 @@
 ---
-title: 'New Plant'
-openapi: 'WEBHOOK /plant/webhook'
+title: 'Webhooks'
+openapi: 'WEBHOOK /webhooks'
 ---
+
+# Webhooks
+
+BusinessGPT webhooks allow you to receive real-time notifications when specific events occur in your BusinessGPT account. This enables you to build integrations that respond automatically to events like document processing completion, analysis results, or chat interactions.
+
+## Setting Up Webhooks
+
+To use webhooks, you need to:
+
+1. Register a webhook endpoint URL in your BusinessGPT account
+2. Select the events you want to subscribe to
+3. Implement a webhook receiver at your endpoint URL to process the events
+
+## Webhook Events
+
+BusinessGPT can send webhook notifications for various events:
+
+<CardGroup cols={2}>
+  <Card title="Document Events">
+    - `document.processed`: Document processing completed
+    - `document.failed`: Document processing failed
+    - `document.updated`: Document metadata updated
+    - `document.deleted`: Document deleted
+  </Card>
+  <Card title="Analysis Events">
+    - `analysis.completed`: Data analysis completed
+    - `analysis.failed`: Data analysis failed
+    - `analysis.scheduled`: Scheduled analysis triggered
+  </Card>
+  <Card title="Chat Events">
+    - `chat.message.created`: New message in a chat
+    - `chat.session.ended`: Chat session ended
+    - `chat.feedback.received`: User feedback received
+  </Card>
+  <Card title="Account Events">
+    - `user.created`: New user created
+    - `user.updated`: User information updated
+    - `team.member.added`: Team member added
+    - `usage.limit.approaching`: Usage limit approaching
+  </Card>
+</CardGroup>
+
+## Webhook Payload
+
+When an event occurs, BusinessGPT sends an HTTP POST request to your webhook URL with a JSON payload containing event details.
+
+### Common Payload Structure
+
+All webhook payloads include these common fields:
+
+<ResponseField name="event_type" type="string">
+  The type of event that triggered the webhook (e.g., "document.processed").
+</ResponseField>
+
+<ResponseField name="event_id" type="string">
+  A unique identifier for this event.
+</ResponseField>
+
+<ResponseField name="created_at" type="string">
+  ISO 8601 timestamp when the event occurred.
+</ResponseField>
+
+<ResponseField name="account_id" type="string">
+  The ID of the BusinessGPT account that the event belongs to.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  Event-specific data. The structure varies depending on the event type.
+</ResponseField>
+
+### Event-Specific Payloads
+
+Different events include different data in their payloads. Here are examples for common events:
+
+#### Document Processed Event
+
+```json
+{
+  "event_type": "document.processed",
+  "event_id": "evt_123abc",
+  "created_at": "2023-06-15T10:30:45Z",
+  "account_id": "acc_xyz789",
+  "data": {
+    "document_id": "doc_456def",
+    "title": "Vendor Agreement 2023",
+    "status": "completed",
+    "processing_time": 3.45,
+    "pages": 12,
+    "file_type": "pdf",
+    "extracted_entities_count": 37,
+    "confidence_score": 0.92
+  }
+}
+```
+
+#### Analysis Completed Event
+
+```json
+{
+  "event_type": "analysis.completed",
+  "event_id": "evt_789ghi",
+  "created_at": "2023-06-16T14:22:33Z",
+  "account_id": "acc_xyz789",
+  "data": {
+    "analysis_id": "an_abc123",
+    "query": "What were our top-selling products last quarter?",
+    "status": "completed",
+    "execution_time": 2.34,
+    "data_points_analyzed": 1240,
+    "insight_count": 5,
+    "visualization_count": 2
+  }
+}
+```
+
+## Security
+
+### Webhook Signatures
+
+To verify that webhook requests are coming from BusinessGPT, we include a signature in the `X-BusinessGPT-Signature` header of each request. This signature is a HMAC SHA-256 hash of the request body, using your webhook secret as the key.
+
+Example of verifying the signature in Node.js:
+
+```javascript
+const crypto = require('crypto');
+
+function verifyWebhookSignature(requestBody, signature, secret) {
+  const hmac = crypto.createHmac('sha256', secret);
+  const expectedSignature = hmac.update(requestBody).digest('hex');
+  return crypto.timingSafeEqual(
+    Buffer.from(signature),
+    Buffer.from(expectedSignature)
+  );
+}
+
+// In your webhook handler:
+const isValid = verifyWebhookSignature(
+  requestBody,
+  req.headers['x-businessgpt-signature'],
+  process.env.WEBHOOK_SECRET
+);
+
+if (!isValid) {
+  return res.status(401).send('Invalid signature');
+}
+```
+
+### Best Practices
+
+For secure and reliable webhook processing:
+
+1. Always verify the webhook signature
+2. Implement idempotency to handle duplicate events
+3. Respond quickly to webhook requests (within 5 seconds)
+4. Implement retry logic for failed webhook processing
+5. Store the raw webhook payload before processing
+
+## Testing Webhooks
+
+You can test your webhook implementation using the BusinessGPT developer console:
+
+1. Go to Settings > API & Webhooks
+2. Enter your webhook URL
+3. Select an event type
+4. Click "Send Test Event"
+
+This will send a test event to your webhook endpoint with sample data.
+
+## Webhook Management
+
+Manage your webhooks through:
+
+- **API**: Use the Webhooks API to programmatically create and manage webhooks
+- **Dashboard**: Configure webhooks in the BusinessGPT dashboard under Settings > API & Webhooks
+- **CLI**: Use the BusinessGPT CLI to manage webhooks with commands like `businessgpt webhooks create`

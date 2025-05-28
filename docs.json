@@ -1,55 +1,79 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "<span style=\"font-size: 0.8em;\">BusinessGPT powered by Eraneos</span>",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#0066CC",
+    "light": "#3399FF",
+    "dark": "#004C99"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Product",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Introduction",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "quickstart"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Features",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "features/chat",
+              "features/document-processing",
+              "features/instructions",
+              "features/memory",
+              "features/projects",
+              "features/web-search",
+              "features/workspaces"
+            ]
+          },
+          {
+            "group": "Use Cases",
+            "pages": [
+              "use-cases/business-intelligence",
+              "use-cases/customer-support",
+              "use-cases/document-management"
             ]
           }
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "Settings & Admin",
         "groups": [
           {
-            "group": "API Documentation",
+            "group": "User Settings",
             "pages": [
-              "api-reference/introduction"
+              "settings/account"
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Administration",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "admin/rollout-setup",
+              "admin/rollout-playbook"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Security & Compliance",
+        "groups": [
+          {
+            "group": "Security",
+            "pages": [
+              "security/overview",
+              "security/access-control"
+            ]
+          },
+          {
+            "group": "Compliance",
+            "pages": [
+              "compliance/certifications"
             ]
           }
         ]
@@ -58,19 +82,9 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Eraneos",
+          "href": "https://eraneos.com",
+          "icon": "building"
         }
       ]
     }
@@ -80,23 +94,12 @@
     "dark": "/logo/dark.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+    "links": []
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/eraneos",
+      "linkedin": "https://linkedin.com/company/eraneos"
     }
   }
 }

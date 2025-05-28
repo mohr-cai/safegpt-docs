@@ -1,0 +1,138 @@
+---
+title: 'Access Control'
+description: 'Authentication, authorization, and user management in BusinessGPT'
+---
+
+# Access Control in BusinessGPT
+
+## Authentication
+
+BusinessGPT implements robust authentication mechanisms to ensure that only authorized users can access the platform:
+
+### Single Sign-On (SSO)
+
+<AccordionGroup>
+  <Accordion icon="key" title="Azure AD Integration">
+    BusinessGPT integrates seamlessly with Azure Active Directory, allowing organizations to:
+    - Use existing corporate identities
+    - Apply consistent access policies
+    - Enforce password complexity requirements
+    - Implement conditional access policies
+  </Accordion>
+  <Accordion icon="shield-check" title="Multi-Factor Authentication (MFA)">
+    All users are required to use multi-factor authentication, which provides:
+    - An additional layer of security beyond passwords
+    - Protection against credential theft and phishing attacks
+    - Compliance with security best practices and regulations
+    - Support for various authentication methods (authenticator apps, SMS, etc.)
+  </Accordion>
+</AccordionGroup>
+
+### Session Management
+
+BusinessGPT implements secure session management practices:
+
+- Secure, HTTP-only cookies with appropriate security flags
+- Automatic session timeout after periods of inactivity
+- Session invalidation upon logout
+- Protection against session fixation attacks
+
+## Authorization
+
+BusinessGPT uses a comprehensive role-based access control (RBAC) system to ensure users can only access the resources and perform the actions they are authorized for:
+
+### Role-Based Access Control
+
+<CardGroup cols={3}>
+  <Card title="Owner" icon="crown">
+    Full control over resources, including user management and deletion
+  </Card>
+  <Card title="Editor" icon="pen-to-square">
+    Can create, modify, and collaborate on content
+  </Card>
+  <Card title="Viewer" icon="eye">
+    Read-only access to designated resources
+  </Card>
+</CardGroup>
+
+### Permission Levels
+
+Access control is implemented at multiple levels:
+
+1. **Organization Level**
+   - Controls who can access the organization's BusinessGPT instance
+   - Manages organization-wide settings and policies
+
+2. **Project Level**
+   - Determines who can access specific projects
+   - Controls project-specific settings and configurations
+
+3. **Resource Level**
+   - Governs access to individual chats, documents, and other resources
+   - Enables fine-grained sharing and collaboration
+
+## User Management
+
+BusinessGPT provides comprehensive user management capabilities:
+
+### User Provisioning
+
+<AccordionGroup>
+  <Accordion icon="user-plus" title="User Onboarding">
+    - Automated user provisioning through Azure AD
+    - Invitation-based user registration
+    - Self-service account creation (if enabled)
+    - Initial role assignment
+  </Accordion>
+  <Accordion icon="user-minus" title="User Offboarding">
+    - Immediate access revocation
+    - Data transfer options for user content
+    - Audit trail of user activities
+    - Compliance with data retention policies
+  </Accordion>
+</AccordionGroup>
+
+### User Administration
+
+Administrators have access to powerful user management tools:
+
+- User activity monitoring and reporting
+- Role and permission management
+- Access policy enforcement
+- Bulk user operations
+
+## Audit and Compliance
+
+BusinessGPT maintains comprehensive audit logs to track access and actions:
+
+- Authentication events (successful and failed login attempts)
+- Authorization decisions
+- Resource access and modifications
+- Administrative actions
+
+These logs can be:
+- Retained according to configurable retention policies
+- Exported for compliance reporting
+- Integrated with SIEM systems (for Enterprise customers)
+- Used for security incident investigation
+
+## Best Practices
+
+We recommend the following access control best practices:
+
+1. **Implement the principle of least privilege**
+   - Assign users the minimum permissions needed for their role
+   - Regularly review and adjust permissions as needed
+
+2. **Enforce strong authentication**
+   - Require MFA for all users
+   - Set appropriate password policies
+
+3. **Regular access reviews**
+   - Periodically audit user accounts and permissions
+   - Remove access for departed employees promptly
+
+4. **Segregation of duties**
+   - Separate administrative responsibilities
+   - Ensure critical actions require multiple approvers
+

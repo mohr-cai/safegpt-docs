@@ -1,4 +1,203 @@
 ---
-title: 'Delete Plant'
-openapi: 'DELETE /plants/{id}'
+title: 'Data Analysis'
+openapi: 'POST /data/analyze'
 ---
+
+# Data Analysis
+
+The Data Analysis endpoint allows you to analyze data sources to generate insights, visualizations, and answers to business questions using natural language.
+
+## Request Body
+
+<ParamField body="query" type="string" required>
+  The natural language query or question about your data.
+
+  Examples:
+  - "What were our top-selling products last quarter?"
+  - "Show me customer acquisition cost by marketing channel"
+  - "Compare revenue growth across regions for the past 3 years"
+</ParamField>
+
+<ParamField body="data_sources" type="array" required>
+  Array of data sources to analyze. Each data source can be one of:
+
+  - A data source ID (string) for previously connected data sources
+  - A file upload (object) with data content
+  - A SQL query (object) to execute against connected databases
+</ParamField>
+
+<ParamField body="analysis_type" type="string" default="auto">
+  The type of analysis to perform:
+  - `auto`: Automatically determine the best analysis type
+  - `descriptive`: Summarize and describe the data
+  - `comparative`: Compare different segments or time periods
+  - `predictive`: Generate forecasts or predictions
+  - `diagnostic`: Identify causes and relationships
+</ParamField>
+
+<ParamField body="output_format" type="string" default="json">
+  The desired format for the analysis results:
+  - `json`: Structured JSON response
+  - `html`: HTML with embedded visualizations
+  - `csv`: Tabular data in CSV format
+  - `image`: Generate visualization images (returned as URLs)
+</ParamField>
+
+<ParamField body="visualization_preferences" type="object">
+  Optional preferences for visualizations:
+  - `chart_type` (string): Preferred chart type (bar, line, pie, etc.)
+  - `colors` (array): Preferred color palette
+  - `dimensions` (object): Width and height for visualizations
+  - `include_raw_data` (boolean): Whether to include raw data with visualizations
+</ParamField>
+
+## Response
+
+<ResponseField name="analysis_id" type="string">
+  A unique identifier for the analysis.
+</ResponseField>
+
+<ResponseField name="query" type="string">
+  The original query that was analyzed.
+</ResponseField>
+
+<ResponseField name="insights" type="array">
+  Array of insights derived from the data.
+
+  Each insight contains:
+  - `description` (string): Textual description of the insight
+  - `importance` (number): Relative importance score (0-1)
+  - `supporting_data` (object): Data points supporting this insight
+</ResponseField>
+
+<ResponseField name="visualizations" type="array">
+  Array of generated visualizations.
+
+  Each visualization contains:
+  - `type` (string): The type of visualization (bar_chart, line_chart, etc.)
+  - `title` (string): Title for the visualization
+  - `description` (string): Description of what the visualization shows
+  - `data` (object): Data used to generate the visualization
+  - `image_url` (string): URL to rendered image (if output_format includes image)
+  - `html` (string): HTML code for the visualization (if output_format includes html)
+</ResponseField>
+
+<ResponseField name="answer" type="string">
+  A natural language answer to the query, summarizing the key findings.
+</ResponseField>
+
+<ResponseField name="data_summary" type="object">
+  Summary statistics about the analyzed data.
+</ResponseField>
+
+<ResponseField name="processing_info" type="object">
+  Information about the processing of the request:
+  - `execution_time` (number): Time taken to process the request in seconds
+  - `data_points_analyzed` (integer): Number of data points analyzed
+  - `data_sources_used` (array): List of data sources used in the analysis
+</ResponseField>
+
+## Example
+
+### Request
+
+```json
+{
+  "query": "What were our top 5 products by revenue in Q2 2023 and how did they compare to Q1?",
+  "data_sources": [
+    "ds_sales_data",
+    {
+      "type": "file",
+      "format": "csv",
+      "content_base64": "SGVhZGVyMSxIZWFkZXIyLEhlYWRlcjMNCnZhbDEsdmFsMix2YWwzDQo=",
+      "name": "additional_sales_data.csv"
+    }
+  ],
+  "analysis_type": "comparative",
+  "output_format": "json",
+  "visualization_preferences": {
+    "chart_type": "bar",
+    "include_raw_data": true
+  }
+}
+```
+
+### Response
+
+```json
+{
+  "analysis_id": "an_xyz789",
+  "query": "What were our top 5 products by revenue in Q2 2023 and how did they compare to Q1?",
+  "insights": [
+    {
+      "description": "Product A had the highest revenue in Q2 2023 at $1.2M, a 15% increase from Q1",
+      "importance": 0.95,
+      "supporting_data": {
+        "q1_revenue": 1043000,
+        "q2_revenue": 1200000,
+        "percent_change": 15.05
+      }
+    },
+    {
+      "description": "Product C showed the largest growth, increasing 37% from Q1 to Q2",
+      "importance": 0.87,
+      "supporting_data": {
+        "q1_revenue": 580000,
+        "q2_revenue": 795000,
+        "percent_change": 37.07
+      }
+    },
+    {
+      "description": "Product E dropped out of the top 5 in Q2, replaced by Product F",
+      "importance": 0.72,
+      "supporting_data": {
+        "product_e_q1_rank": 5,
+        "product_e_q2_rank": 7,
+        "product_f_q1_rank": 8,
+        "product_f_q2_rank": 4
+      }
+    }
+  ],
+  "visualizations": [
+    {
+      "type": "bar_chart",
+      "title": "Top 5 Products by Revenue - Q2 2023 vs Q1 2023",
+      "description": "Comparison of revenue for the top 5 products in Q2 2023 with their Q1 performance",
+      "data": {
+        "labels": ["Product A", "Product B", "Product C", "Product D", "Product F"],
+        "datasets": [
+          {
+            "label": "Q1 2023",
+            "data": [1043000, 875000, 580000, 495000, 320000]
+          },
+          {
+            "label": "Q2 2023",
+            "data": [1200000, 920000, 795000, 610000, 450000]
+          }
+        ]
+      }
+    },
+    {
+      "type": "percent_change_chart",
+      "title": "Q1 to Q2 Revenue Growth by Product",
+      "description": "Percentage change in revenue from Q1 to Q2 2023 for top products",
+      "data": {
+        "labels": ["Product A", "Product B", "Product C", "Product D", "Product F"],
+        "values": [15.05, 5.14, 37.07, 23.23, 40.63]
+      }
+    }
+  ],
+  "answer": "In Q2 2023, the top 5 products by revenue were Product A ($1.2M), Product B ($920K), Product C ($795K), Product D ($610K), and Product F ($450K). Compared to Q1, all top products showed growth, with Product F showing the highest percentage increase at 40.6%, followed by Product C at 37.1%. Product E, which was in the top 5 during Q1, dropped to 7th place in Q2 and was replaced by Product F which moved up from 8th place.",
+  "data_summary": {
+    "total_products_analyzed": 15,
+    "total_q1_revenue": "$4.8M",
+    "total_q2_revenue": "$5.7M",
+    "overall_growth": "18.75%"
+  },
+  "processing_info": {
+    "execution_time": 2.34,
+    "data_points_analyzed": 1240,
+    "data_sources_used": ["ds_sales_data", "additional_sales_data.csv"]
+  }
+}
+```

@@ -1,33 +1,121 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: 'API Introduction'
+description: 'Integrate BusinessGPT capabilities into your applications'
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+# BusinessGPT API
 
-## Welcome
+The BusinessGPT API allows you to integrate AI-powered business capabilities directly into your applications, workflows, and systems. With our comprehensive set of endpoints, you can leverage the full power of BusinessGPT programmatically.
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+## API Capabilities
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+<CardGroup cols={2}>
+  <Card title="Conversational AI" icon="comments">
+    Integrate BusinessGPT's chat capabilities into your applications
+  </Card>
+  <Card title="Document Processing" icon="file-lines">
+    Process, analyze, and extract information from business documents
+  </Card>
+  <Card title="Data Analysis" icon="chart-line">
+    Generate insights and visualizations from your business data
+  </Card>
+  <Card title="Workflow Automation" icon="gears">
+    Create intelligent workflows triggered by events and conditions
+  </Card>
+</CardGroup>
+
+## Getting Started
+
+To use the BusinessGPT API, you'll need:
+
+1. A BusinessGPT account with API access enabled
+2. An API key for authentication
+3. Understanding of REST API principles
+4. Knowledge of your specific integration requirements
+
+Our API follows RESTful principles and uses standard HTTP methods. All requests and responses are in JSON format.
 
 ## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+All API requests require authentication using API keys. Include your API key in the Authorization header of your requests:
+
+```bash
+Authorization: Bearer YOUR_API_KEY
+```
+
+<Note>
+  Keep your API keys secure and never expose them in client-side code. Use environment variables or secure vaults to store your keys.
+</Note>
+
+## Rate Limits
+
+API usage is subject to rate limits based on your subscription plan:
+
+| Plan | Rate Limit | Burst Limit |
+| ---- | ---------- | ----------- |
+| Standard | 60 requests/minute | 100 requests/minute |
+| Professional | 300 requests/minute | 500 requests/minute |
+| Enterprise | Custom | Custom |
+
+If you exceed your rate limit, the API will return a 429 Too Many Requests response.
+
+## Error Handling
+
+The API uses standard HTTP status codes to indicate success or failure:
+
+- 2xx: Success
+- 4xx: Client error (invalid request)
+- 5xx: Server error
+
+Error responses include a JSON body with details:
 
 ```json
-"security": [
-  {
-    "bearerAuth": []
+{
+  "error": {
+    "code": "invalid_parameter",
+    "message": "The parameter 'limit' must be a positive integer",
+    "details": {
+      "parameter": "limit",
+      "value": "-5"
+    }
   }
-]
+}
 ```
+
+## API Versioning
+
+The API is versioned to ensure compatibility as we add new features. Specify the API version in the URL:
+
+```
+https://api.businessgpt.eraneos.com/v1/chat/completions
+```
+
+We maintain backward compatibility within major versions.
+
+## SDKs and Libraries
+
+We provide official SDKs for popular programming languages:
+
+<CardGroup cols={3}>
+  <Card title="Python SDK" icon="python" href="/api-reference/sdks/python">
+    Ideal for data science and backend applications
+  </Card>
+  <Card title="JavaScript/TypeScript SDK" icon="js" href="/api-reference/sdks/javascript">
+    Perfect for web and Node.js applications
+  </Card>
+  <Card title="Java SDK" icon="java" href="/api-reference/sdks/java">
+    Great for enterprise applications
+  </Card>
+</CardGroup>
+
+## API Reference
+
+Explore our API endpoints:
+
+<Card
+  title="BusinessGPT API Reference"
+  icon="code"
+  href="/api-reference/openapi.json"
+>
+  View the complete OpenAPI specification
+</Card>

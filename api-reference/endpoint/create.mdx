@@ -1,4 +1,151 @@
 ---
-title: 'Create Plant'
-openapi: 'POST /plants'
+title: 'Document Processing'
+openapi: 'POST /documents/process'
 ---
+
+# Document Processing
+
+The Document Processing endpoint allows you to upload and process documents to extract information, analyze content, and make documents searchable within BusinessGPT.
+
+## Request Body
+
+<ParamField body="file" type="file" required>
+  The document file to process. Supported formats include PDF, DOCX, XLSX, PPTX, TXT, CSV, and more.
+</ParamField>
+
+<ParamField body="processing_type" type="string" default="standard">
+  The type of processing to perform on the document:
+  - `standard`: Basic text extraction and indexing
+  - `deep`: Comprehensive analysis including entity extraction, semantic understanding, and relationship mapping
+  - `ocr`: Optimized for scanned documents with OCR (Optical Character Recognition)
+  - `form`: Specialized for extracting structured data from forms
+  - `contract`: Specialized for legal contract analysis
+</ParamField>
+
+<ParamField body="extraction_templates" type="array">
+  Optional array of template IDs to use for extracting specific information from the document.
+</ParamField>
+
+<ParamField body="metadata" type="object">
+  Optional metadata to associate with the document:
+  - `title` (string): Document title
+  - `description` (string): Document description
+  - `tags` (array): Array of tag strings
+  - `custom_fields` (object): Custom metadata fields
+</ParamField>
+
+<ParamField body="options" type="object">
+  Processing options:
+  - `language` (string): Preferred language for processing (ISO code)
+  - `confidence_threshold` (number): Minimum confidence score for extracted information (0.0-1.0)
+  - `return_text` (boolean): Whether to return extracted text in the response
+  - `webhook_url` (string): URL to notify when processing is complete (for async processing)
+</ParamField>
+
+## Response
+
+<ResponseField name="document_id" type="string">
+  A unique identifier for the processed document.
+</ResponseField>
+
+<ResponseField name="status" type="string">
+  The processing status: "completed", "processing", or "failed".
+</ResponseField>
+
+<ResponseField name="metadata" type="object">
+  Document metadata, including both provided and automatically extracted metadata.
+</ResponseField>
+
+<ResponseField name="extracted_data" type="object">
+  Structured data extracted from the document, varies based on document type and processing options.
+</ResponseField>
+
+<ResponseField name="entities" type="array">
+  Entities identified in the document (people, organizations, dates, etc.).
+</ResponseField>
+
+<ResponseField name="text" type="string">
+  The extracted text content (only included if return_text is true).
+</ResponseField>
+
+<ResponseField name="pages" type="integer">
+  The number of pages in the document.
+</ResponseField>
+
+<ResponseField name="processing_time" type="number">
+  Time taken to process the document in seconds.
+</ResponseField>
+
+## Example
+
+### Request
+
+```bash
+curl -X POST https://api.businessgpt.eraneos.com/v1/documents/process \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -F "file=@contract.pdf" \
+  -F "processing_type=contract" \
+  -F "metadata={\"title\":\"Vendor Agreement 2023\",\"tags\":[\"contract\",\"vendor\",\"legal\"]}" \
+  -F "options={\"return_text\":false}"
+```
+
+### Response
+
+```json
+{
+  "document_id": "doc_abc123",
+  "status": "completed",
+  "metadata": {
+    "title": "Vendor Agreement 2023",
+    "tags": ["contract", "vendor", "legal"],
+    "detected_language": "en",
+    "file_type": "pdf",
+    "created_at": "2023-06-15T10:30:45Z"
+  },
+  "extracted_data": {
+    "parties": [
+      {
+        "name": "Acme Corporation",
+        "role": "client",
+        "address": "123 Business Ave, New York, NY 10001"
+      },
+      {
+        "name": "Supplier Inc.",
+        "role": "vendor",
+        "address": "456 Commerce St, Chicago, IL 60601"
+      }
+    ],
+    "effective_date": "2023-07-01",
+    "expiration_date": "2024-06-30",
+    "payment_terms": "Net 30",
+    "total_value": "$75,000.00",
+    "key_clauses": [
+      {
+        "type": "termination",
+        "summary": "Either party may terminate with 60 days written notice",
+        "page": 4
+      },
+      {
+        "type": "confidentiality",
+        "summary": "All information shared remains confidential for 3 years after termination",
+        "page": 6
+      }
+    ]
+  },
+  "entities": [
+    {
+      "text": "John Smith",
+      "type": "person",
+      "role": "signatory",
+      "confidence": 0.95
+    },
+    {
+      "text": "Acme Corporation",
+      "type": "organization",
+      "confidence": 0.98
+    }
+  ],
+  "pages": 12,
+  "processing_time": 3.45
+}
+```
