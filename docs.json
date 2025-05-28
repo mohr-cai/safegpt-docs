@@ -7,6 +7,14 @@
     "light": "#3399FF",
     "dark": "#004C99"
   },
+   "contextual": {
+   "options": [
+     "copy",
+     "view",
+     "chatgpt",
+     "claude"
+   ]
+ },
   "favicon": "/logo/eraneos_neg.png",
   "navigation": {
     "tabs": [
