@@ -34,7 +34,8 @@
               "features/document-processing",
               "features/instructions",
               "features/memory",
-              "features/projects",
+              "features/knowledge-library",
+              "features/prompt-libraries",
               "features/web-search",
               "features/workspaces",
               "features/user-activity"
