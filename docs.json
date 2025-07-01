@@ -36,6 +36,7 @@
               "features/memory",
               "features/knowledge-library",
               "features/prompt-libraries",
+              "features/assistants",
               "features/web-search",
               "features/workspaces",
               "features/user-activity"

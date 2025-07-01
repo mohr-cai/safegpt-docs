@@ -1,105 +1,61 @@
 ---
 title: 'Anweisungen'
-description: 'Definieren Sie spezifische Kontexte für präzisere Antworten'
+description: 'Anweisungen sind jetzt in Promptbibliotheken und Assistenten integriert'
 ---
 
 # Anweisungen
 
-Die Anweisungsfunktion in BusinessGPT ermöglicht es Ihnen, spezifische, anpassbare Anweisungen für die KI zu definieren. Diese Anweisungen dienen als Richtlinien und stellen sicher, dass die KI präzise auf Ihre individuellen Anforderungen und den Kontext einer bestimmten Aufgabe reagiert.
+<Note>
+  **Wichtiger Hinweis**: Die Anweisungsfunktion als eigenständiges Feature existiert nicht mehr. Die Funktionalität wurde in die [Promptbibliotheken](/features/prompt-libraries) und [Assistenten](/features/assistants) integriert.
+</Note>
 
-## Was sind Anweisungen?
+## Umstellung auf Promptbibliotheken und Assistenten
 
-Anweisungen in BusinessGPT sind personalisierte Direktiven, die Sie erstellen und verwalten können, um die Antworten der KI zu steuern. Durch die Erstellung und Verwaltung dieser angepassten Richtlinien können Sie eine höhere Automatisierung und Genauigkeit bei der Erledigung von Aufgaben erreichen.
+Die Funktionalität, spezifische Anweisungen für die KI zu definieren, wurde vollständig in zwei leistungsstarke Features integriert:
 
-<img
-  src="/images/screen/anweisung_dark.png"
-  alt="Anweisungen-Oberfläche"
-  width="800"
-/>
+1. **[Promptbibliotheken](/features/prompt-libraries)**: Erstellen, verwalten und teilen Sie Prompts (Anweisungen) für effiziente KI-Interaktionen
+2. **[Assistenten](/features/assistants)**: Konfigurieren Sie spezialisierte KI-Assistenten mit integrierten Systeminstruktionen
 
-## Hauptfunktionen
+## Wo finde ich die Anweisungsfunktionalität jetzt?
 
-### Anpassbare Anweisungen
+### In Promptbibliotheken
 
-Erstellen Sie Anweisungen, die Folgendes definieren:
-- Eine spezifische Rolle für die KI (z.B. "Agiere als Marketing-Experte" oder "Antworte als technischer Berater")
-- Die Aufgabe, die Sie erledigen möchten (z.B. "Erstelle einen Entwurf für..." oder "Analysiere die folgenden Daten...")
-- Relevante Hintergrundinformationen
-- Das gewünschte Format für die Antwort (z.B. als Liste, Tabelle oder strukturierter Text)
-- Den Umfang der Antwort (z.B. "in 3-5 Aufzählungspunkten" oder "in etwa 200 Wörtern")
+Die [Promptbibliotheken](/features/prompt-libraries) bieten jetzt alle Funktionen, die zuvor in der Anweisungsfunktion verfügbar waren:
 
-### Anweisungsverwaltung
+- Erstellen und Speichern von strukturierten Prompts (Anweisungen)
+- Definition von Rollen, Aufgaben und Antwortformaten
+- Organisation und Kategorisierung von Prompts
+- Teilen von Prompts mit Teammitgliedern
 
-- Speichern Sie Anweisungen zur späteren Verwendung
-- Bearbeiten Sie bestehende Anweisungen
-- Teilen Sie Anweisungen mit Teammitgliedern
-- Organisieren Sie Anweisungen nach Kategorie oder Zweck
+<Card 
+  title="Zu den Promptbibliotheken" 
+  icon="book" 
+  href="/features/prompt-libraries"
+>
+  Erfahren Sie, wie Sie Prompts erstellen, verwalten und teilen können
+</Card>
 
-## Wie man Anweisungen verwendet
+### In Assistenten
 
-### Erstellen einer neuen Anweisung
+Die [Assistenten](/features/assistants) integrieren Systeminstruktionen als Kernkomponente:
 
-1. Navigieren Sie zum Abschnitt "Anweisungen" im Seitenmenü
-2. Klicken Sie auf "Neue Anweisung erstellen" oder das "+" Symbol
-3. Geben Sie einen beschreibenden Titel für Ihre Anweisung in das Feld "Titel" ein
-4. Formulieren Sie Ihre spezifische Anweisung im Textfeld "Anweisung"
-5. Klicken Sie auf "Speichern", um Ihre Anweisung zu speichern
+- Definition spezifischer Verhaltensweisen für spezialisierte KI-Assistenten
+- Kombination von Instruktionen mit Wissensdatenbanken und anderen Funktionen
+- Erstellung maßgeschneiderter KI-Erfahrungen für verschiedene Anwendungsfälle
 
-### Verwenden einer Anweisung in einem Chat
+<Card 
+  title="Zu den Assistenten" 
+  icon="robot" 
+  href="/features/assistants"
+>
+  Erfahren Sie, wie Sie spezialisierte KI-Assistenten mit integrierten Systeminstruktionen konfigurieren können
+</Card>
 
-1. Öffnen Sie einen bestehenden Chat oder starten Sie einen neuen Chat
-2. Klicken Sie auf das "+" Symbol, um das Dropdown-Menü aufzurufen
-3. Wählen Sie Ihre zuvor erstellte Anweisung aus
-4. Klicken Sie auf "Speichern", um die Anweisung auf Ihren Chat anzuwenden
-5. Die KI wird nun diese Richtlinien verwenden, um Ihre Anfragen zu verarbeiten
+## Vorteile der Integration
 
-## Best Practices
+Die Integration der Anweisungsfunktionalität in Promptbibliotheken und Assistenten bietet mehrere Vorteile:
 
-Für optimale Ergebnisse mit Anweisungen:
-
-1. **Seien Sie spezifisch und klar** in Ihren Direktiven
-2. **Definieren Sie die Rolle**, die die KI übernehmen soll
-3. **Spezifizieren Sie das Format**, das Sie für Antworten bevorzugen
-4. **Fügen Sie relevanten Kontext hinzu**, der der KI hilft, Ihre Bedürfnisse zu verstehen
-5. **Beginnen Sie mit einfachen Anweisungen**, bevor Sie komplexere erstellen
-
-## Beispielanweisungen
-
-<AccordionGroup>
-  <Accordion title="Marketing-Inhaltserstellung">
-    **Titel**: Marketing-Inhaltsersteller
-
-    **Anweisung**: Agiere als erfahrener Marketing-Inhaltsersteller. Wenn ich eine Produkt- oder Dienstleistungsbeschreibung bereitstelle, erstelle ansprechende Marketingtexte, die wichtige Vorteile hervorheben, potenzielle Kundenschmerzpunkte ansprechen und einen überzeugenden Handlungsaufruf enthalten. Formatiere deine Antwort mit einer Überschrift, 3-4 kurzen Absätzen und 3-5 Aufzählungspunkten der wichtigsten Funktionen. Halte den Ton professionell, aber gesprächig, und begrenze die Gesamtantwort auf etwa 300 Wörter.
-  </Accordion>
-  <Accordion title="Technische Dokumentation">
-    **Titel**: Technischer Dokumentationsassistent
-
-    **Anweisung**: Agiere als Spezialist für technische Dokumentation. Wenn ich Informationen über einen technischen Prozess oder eine Funktion bereitstelle, erstelle klare, präzise Dokumentation, die für Benutzer mit grundlegendem technischen Wissen verständlich wäre. Strukturiere deine Antwort mit einem kurzen Überblick, schrittweisen Anweisungen und einem Abschnitt zur Fehlerbehebung. Verwende einfache Sprache, vermeide Fachjargon wo möglich und füge Hinweise für Schritte hinzu, die besondere Aufmerksamkeit erfordern.
-  </Accordion>
-  <Accordion title="Besprechungszusammenfassung">
-    **Titel**: Besprechungszusammenfasser
-
-    **Anweisung**: Agiere als professioneller Besprechungsassistent. Wenn ich Besprechungsnotizen oder Transkripte bereitstelle, erstelle eine strukturierte Zusammenfassung, die Folgendes enthält: 1) Wichtige Diskussionspunkte, 2) Getroffene Entscheidungen, 3) Aktionspunkte mit verantwortlichen Parteien und 4) Nachfragen oder ungelöste Probleme. Formatiere die Zusammenfassung in einer klaren, übersichtlichen Weise mit Überschriften und Aufzählungspunkten. Halte die Zusammenfassung prägnant, konzentriere dich nur auf substantielle Informationen und hebe erwähnte Fristen hervor.
-  </Accordion>
-</AccordionGroup>
-
-## Nächste Schritte
-
-Nachdem Sie die Anweisungsfunktion verstanden haben, entdecken Sie, wie BusinessGPT Ihnen helfen kann mit:
-
-<CardGroup>
-  <Card 
-    title="Wissensdatenbank" 
-    icon="database" 
-    href="/features/knowledge-library"
-  >
-    Erfahren Sie, wie Sie Wissenssammlungen für bestimmte Themen erstellen und teilen können
-  </Card>
-  <Card 
-    title="Dokumentenverarbeitung" 
-    icon="file-lines" 
-    href="/features/document-processing"
-  >
-    Entdecken Sie, wie Sie Dokumente hochladen und analysieren können
-  </Card>
-</CardGroup>
+1. **Vereinfachte Benutzeroberfläche** - Weniger separate Funktionen für eine intuitivere Benutzererfahrung
+2. **Verbesserte Organisation** - Zusammenführung verwandter Funktionen für effizienteres Arbeiten
+3. **Leistungsstärkere Kombinationen** - Nahtlose Integration von Anweisungen mit anderen Funktionen
+4. **Konsistentere Ergebnisse** - Standardisierte Ansätze für die Interaktion mit der KI
