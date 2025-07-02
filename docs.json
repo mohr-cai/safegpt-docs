@@ -78,7 +78,7 @@
                 ]
               },
               {
-                "group": "Hilfe & Support",
+                "group": "Hilfe",
                 "icon": "circle-question",
                 "pages": [
                   "features/faq"
@@ -129,11 +129,6 @@
           "anchor": "Eraneos",
           "href": "https://eraneos.com",
           "icon": "building"
-        },
-        {
-          "anchor": "Support",
-          "href": "mailto:support@eraneos.com",
-          "icon": "headset"
         }
       ]
     }
