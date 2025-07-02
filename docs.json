@@ -98,12 +98,11 @@
                 ]
               },
               {
-                "group": "Konformität",
+                "group": "Software",
                 "icon": "scale",
                 "pages": [
-                  "compliance/legal-compliance",
-                  "compliance/service-description",
-                  "compliance/legal-notices"
+                  "compliance/service-description"
+
                 ]
               }
             ]
