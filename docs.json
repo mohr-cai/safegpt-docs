@@ -64,9 +64,7 @@
                     "group": "Erweiterungen",
                     "icon": "puzzle-piece",
                     "pages": [
-                      "features/web-search",
-                      "features/data-analysis",
-                      "features/integrations"
+                      "features/web-search"
                     ]
                   }
                 ]
