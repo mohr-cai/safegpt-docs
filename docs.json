@@ -27,10 +27,9 @@
             "groups": [
               {
                 "group": "Einführung",
-                "icon": "home",
+                "icon": "book-open-reader",
                 "pages": [
-                  "index",
-                  "changelog"
+                  "index"
                 ]
               },
               {
@@ -100,11 +99,23 @@
               },
               {
                 "group": "Konformität",
-                "icon": "check-square",
+                "icon": "scale",
                 "pages": [
                   "compliance/legal-compliance",
                   "compliance/service-description",
                   "compliance/legal-notices"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Changelog",
+            "groups": [
+              {
+                "group": "Versionshistorie",
+                "icon": "clock-rotate-left",
+                "pages": [
+                  "changelog"
                 ]
               }
             ]
