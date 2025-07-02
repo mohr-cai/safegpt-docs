@@ -41,7 +41,6 @@
                     "icon": "comments",
                     "pages": [
                       "features/chat",
-                      "features/instructions",
                       "features/memory"
                     ]
                   },
@@ -77,7 +76,6 @@
                 "icon": "folder-tree",
                 "pages": [
                   "features/workspaces",
-                  "features/projects",
                   "features/user-activity"
                 ]
               },
