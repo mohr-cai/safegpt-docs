@@ -88,15 +88,6 @@
             ]
           },
           {
-            "tab": "Anwendungsfälle",
-            "icon": "lightbulb",
-            "pages": [
-              "use-cases/business-intelligence",
-              "use-cases/customer-support",
-              "use-cases/document-management"
-            ]
-          },
-          {
             "tab": "Sicherheit & Compliance",
             "groups": [
               {
