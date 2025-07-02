@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "BusinessGPT",
   "colors": {
-    "primary": "#0066CC",
-    "light": "#3399FF",
-    "dark": "#004C99"
+    "primary": "#FF6600",
+    "light": "#FF6600",
+    "dark": "#FF6600"
   },
    "contextual": {
    "options": [
