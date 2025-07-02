@@ -17,55 +17,108 @@
  },
   "favicon": "/logo/eraneos_neg.png",
   "navigation": {
-    "tabs": [
+    "anchors": [
       {
-        "tab": "Produkt",
-        "groups": [
+        "anchor": "Dokumentation",
+        "icon": "book-open",
+        "tabs": [
           {
-            "group": "Einführung",
-            "pages": [
-              "index"
+            "tab": "Produkt",
+            "groups": [
+              {
+                "group": "Einführung",
+                "icon": "home",
+                "pages": [
+                  "index"
+                ]
+              },
+              {
+                "group": "Kernfunktionen",
+                "icon": "star",
+                "pages": [
+                  {
+                    "group": "Chat & Interaktion",
+                    "icon": "comments",
+                    "pages": [
+                      "features/chat",
+                      "features/instructions",
+                      "features/memory"
+                    ]
+                  },
+                  {
+                    "group": "Dokumentenmanagement",
+                    "icon": "file-lines",
+                    "pages": [
+                      "features/document-processing",
+                      "features/knowledge-library"
+                    ]
+                  },
+                  {
+                    "group": "Assistenten & Prompts",
+                    "icon": "robot",
+                    "pages": [
+                      "features/assistants",
+                      "features/prompt-libraries"
+                    ]
+                  },
+                  {
+                    "group": "Erweiterungen",
+                    "icon": "puzzle-piece",
+                    "pages": [
+                      "features/web-search",
+                      "features/data-analysis",
+                      "features/integrations"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Organisation & Verwaltung",
+                "icon": "folder-tree",
+                "pages": [
+                  "features/workspaces",
+                  "features/projects",
+                  "features/user-activity"
+                ]
+              },
+              {
+                "group": "Hilfe & Support",
+                "icon": "circle-question",
+                "pages": [
+                  "features/faq"
+                ]
+              }
             ]
           },
           {
-            "group": "Funktionen",
+            "tab": "Anwendungsfälle",
+            "icon": "lightbulb",
             "pages": [
-              "features/chat",
-              "features/document-processing",
-              "features/instructions",
-              "features/memory",
-              "features/knowledge-library",
-              "features/prompt-libraries",
-              "features/assistants",
-              "features/web-search",
-              "features/workspaces",
-              "features/user-activity"
+              "use-cases/business-intelligence",
+              "use-cases/customer-support",
+              "use-cases/document-management"
             ]
           },
           {
-            "group": "Hilfe & Support",
-            "pages": [
-              "features/faq"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Sicherheit & Compliance",
-        "groups": [
-          {
-            "group": "Sicherheit",
-            "pages": [
-              "security/overview",
-              "security/access-control"
-            ]
-          },
-          {
-            "group": "Konformität",
-            "pages": [
-              "compliance/legal-compliance",
-              "compliance/service-description",
-              "compliance/legal-notices"
+            "tab": "Sicherheit & Compliance",
+            "groups": [
+              {
+                "group": "Sicherheit",
+                "icon": "shield-halved",
+                "pages": [
+                  "security/overview",
+                  "security/access-control"
+                ]
+              },
+              {
+                "group": "Konformität",
+                "icon": "check-square",
+                "pages": [
+                  "compliance/legal-compliance",
+                  "compliance/service-description",
+                  "compliance/legal-notices"
+                ]
+              }
             ]
           }
         ]
@@ -77,6 +130,11 @@
           "anchor": "Eraneos",
           "href": "https://eraneos.com",
           "icon": "building"
+        },
+        {
+          "anchor": "Support",
+          "href": "mailto:support@eraneos.com",
+          "icon": "headset"
         }
       ]
     }
