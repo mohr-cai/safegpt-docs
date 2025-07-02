@@ -29,7 +29,8 @@
                 "group": "Einführung",
                 "icon": "home",
                 "pages": [
-                  "index"
+                  "index",
+                  "changelog"
                 ]
               },
               {
