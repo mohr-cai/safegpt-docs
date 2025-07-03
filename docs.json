@@ -82,7 +82,7 @@
             ]
           },
           {
-            "tab": "",
+            "tab": "Settings",
             "groups": [
               {
                 "group": "Sicherheit",
@@ -90,14 +90,6 @@
                 "pages": [
                   "security/overview",
                   "security/access-control"
-                ]
-              },
-              {
-                "group": "Software",
-                "icon": "scale",
-                "pages": [
-                  "compliance/service-description"
-
                 ]
               }
             ]
