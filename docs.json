@@ -41,7 +41,8 @@
                     "icon": "comments",
                     "pages": [
                       "features/chat",
-                      "features/memory"
+                      "features/memory",
+                      "features/web-search"
                     ]
                   },
                   {
@@ -60,13 +61,6 @@
                       "features/prompt-libraries"
                     ]
                   },
-                  {
-                    "group": "Erweiterungen",
-                    "icon": "puzzle-piece",
-                    "pages": [
-                      "features/web-search"
-                    ]
-                  }
                 ]
               },
               {
