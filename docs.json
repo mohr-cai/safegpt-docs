@@ -75,7 +75,8 @@
                 "group": "Hilfe",
                 "icon": "circle-question",
                 "pages": [
-                  "features/faq"
+                  "features/faq",
+                  "features/prompting-best-practices"
                 ]
               }
             ]
