@@ -28,15 +28,6 @@ BusinessGPT implementiert robuste Authentifizierungsmechanismen, um sicherzustel
   </Accordion>
 </AccordionGroup>
 
-### Sitzungsverwaltung
-
-BusinessGPT implementiert sichere Sitzungsverwaltungspraktiken:
-
-- Sichere, HTTP-only Cookies mit entsprechenden Sicherheitsflags
-- Automatisches Sitzungs-Timeout nach Inaktivitätsperioden
-- Sitzungsungültigkeit bei Abmeldung
-- Schutz vor Session-Fixation-Angriffen
-
 ## Autorisierung
 
 BusinessGPT verwendet ein umfassendes rollenbasiertes Zugriffskontrollsystem (RBAC), um sicherzustellen, dass Benutzer nur auf die Ressourcen zugreifen und die Aktionen ausführen können, für die sie autorisiert sind:
@@ -99,18 +90,3 @@ Administratoren haben Zugriff auf Benutzerverwaltungstools:
 - Überwachung und Berichterstattung über Benutzeraktivitäten
 - Rollen- und Berechtigungsverwaltung
 - Durchsetzung von Zugriffsrichtlinien
-
-
-## Audit und Compliance
-
-BusinessGPT führt Auditprotokolle, um Zugriffe und Aktionen zu verfolgen:
-
-- Authentifizierungsereignisse (erfolgreiche und fehlgeschlagene Anmeldeversuche)
-- Autorisierungsentscheidungen
-- Ressourcenzugriff und -änderungen
-- Administrative Aktionen
-
-Diese Protokolle können:
-- Gemäß konfigurierbaren Aufbewahrungsrichtlinien aufbewahrt werden
-- Für Compliance-Berichte exportiert werden
-- Für die Untersuchung von Sicherheitsvorfällen verwendet werden
