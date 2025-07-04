@@ -41,7 +41,7 @@
                     "icon": "comments",
                     "pages": [
                       "features/chat",
-                      "features/Gedächtnisfunktion",
+                      "features/Gedächtnis",
                       "features/Websuche"
                     ]
                   },
@@ -67,7 +67,7 @@
                 "group": "Organisation & Verwaltung",
                 "icon": "folder-tree",
                 "pages": [
-                  "features/workspaces",
+                  "features/Arbeitsbereiche",
                   "features/Benutzeraktivität"
                 ]
               },
