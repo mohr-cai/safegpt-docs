@@ -68,7 +68,7 @@
                 "icon": "folder-tree",
                 "pages": [
                   "features/Arbeitsbereiche",
-                  "features/Benutzeraktivität"
+                  "features/Nutzungsaktivität"
                 ]
               },
               {
