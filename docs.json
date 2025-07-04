@@ -128,7 +128,8 @@
   },
   "logo": {
     "light": "/logo/black.svg",
-    "dark": "/logo/white.svg"
+    "dark": "/logo/white.svg",
+    "href": "https://www.eraneos.com/"
   },
   "navbar": {
     "links": []
