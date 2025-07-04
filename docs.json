@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Test",
+  "name": "BusinessGPT",
   "colors": {
     "primary": "#FF6600",
     "light": "#FF6600",
@@ -127,8 +127,8 @@
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/white.svg",
+    "dark": "/logo/black.svg"
   },
   "navbar": {
     "links": []
