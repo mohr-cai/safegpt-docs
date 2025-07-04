@@ -41,16 +41,16 @@
                     "icon": "comments",
                     "pages": [
                       "features/chat",
-                      "features/memory",
-                      "features/web-search"
+                      "features/Gedächtnisfunktion",
+                      "features/Websuche"
                     ]
                   },
                   {
                     "group": "Dokumentenmanagement",
                     "icon": "file-lines",
                     "pages": [
-                      "features/document-processing",
-                      "features/knowledge-library"
+                      "features/Dokumentenverarbeitung",
+                      "features/Wissensdatenbank"
                     ]
                   },
                   {
