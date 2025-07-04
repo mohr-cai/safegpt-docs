@@ -57,7 +57,7 @@
                     "group": "Assistenten & Prompts",
                     "icon": "robot",
                     "pages": [
-                      "features/assistants",
+                      "features/Assistent",
                       "features/prompt-libraries"
                     ]
                   }
@@ -68,7 +68,7 @@
                 "icon": "folder-tree",
                 "pages": [
                   "features/workspaces",
-                  "features/user-activity"
+                  "features/Benutzeraktivität"
                 ]
               },
               {
