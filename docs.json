@@ -91,6 +91,13 @@
                   "security/overview",
                   "security/access-control"
                 ]
+              },
+              {
+                "group": "Rechtliches",
+                "icon": "scale-balanced",
+                "pages": [
+                  "settings/usage"
+                ]
               }
             ]
           },
