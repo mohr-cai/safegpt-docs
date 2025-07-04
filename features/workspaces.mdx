@@ -3,7 +3,7 @@ title: 'Arbeitsbereiche'
 description: 'Organisieren Sie Ihre Arbeit mit BusinessGPT Arbeitsbereichen'
 ---
 
-Arbeitsbereiche ermöglichen es Ihnen, Ihre Arbeit in separate Kontexte zu organisieren. Jeder Arbeitsbereich dient als Container für zusammengehörige Gespräche und Inhalte.
+Arbeitsbereiche in BusinessGPT ermöglichen es Ihnen, Ihre persönliche Arbeit in separate Kontexte zu organisieren. Jeder Arbeitsbereich dient als Container für zusammengehörige Gespräche und Inhalte, wodurch es einfacher wird, zwischen verschiedenen Themen, Kunden oder Wissensdatenbanken, Assistenten und Prompts zu wechseln. Stellen Sie sich Arbeitsbereiche als separate "Schreibtische" vor, auf denen Sie verschiedene Informationssets organisiert und leicht zugänglich halten können.
 
 <img
   src="/images/workspace.png"
@@ -11,68 +11,83 @@ Arbeitsbereiche ermöglichen es Ihnen, Ihre Arbeit in separate Kontexte zu organ
   width="800"
 />
 
-## Asset-Verwaltung
+## Asset-Verwaltung zwischen Arbeitsbereichen
+
+Verschiedene Assets in BusinessGPT verhalten sich unterschiedlich in Bezug auf Arbeitsbereiche:
 
 <CardGroup cols={2}>
   <Card title="Arbeitsbereich-übergreifend" icon="globe">
-    **Promptbibliotheken**: Verfügbar in allen Arbeitsbereichen
+    **Promptbibliotheken**: Sind in allen Arbeitsbereichen verfügbar und können überall verwendet werden
   </Card>
   <Card title="Arbeitsbereich-spezifisch" icon="lock">
-    **Wissensdatenbanken**: Spezifisch für jeden Arbeitsbereich
+    **Wissensdatenbanken**: Sind spezifisch für jeden Arbeitsbereich und werden nicht geteilt
 
-    **Assistenten**: Arbeitsbereichsspezifisch
+    **Assistenten**: Sind arbeitsbereichsspezifisch und müssen für jeden Arbeitsbereich separat konfiguriert werden
 
-    **Gedächtnisfunktion**: Nur Chats aus dem jeweiligen Arbeitsbereich
+    **Gedächtnisfunktion**: Bezieht nur Chats aus dem jeweiligen Arbeitsbereich mit ein
   </Card>
 </CardGroup>
 
-## Arbeitsbereich erstellen
+## Einen Arbeitsbereich erstellen
 
-1. Navigieren Sie zu "Arbeitsbereiche" in der Seitenleiste
-2. Klicken Sie auf "Arbeitsbereich hinzufügen"
-3. Geben Sie einen Namen ein (z.B. "Kunde A", "Forschungsprojekt")
-4. Klicken Sie auf "Erstellen"
+Um einen neuen Arbeitsbereich zu erstellen:
+
+1. Navigieren Sie zum Bereich Arbeitsbereiche in der Seitenleiste oder im Benutzerbereich
+2. Klicken Sie auf die Schaltfläche "Arbeitsbereich hinzufügen"
+3. Geben Sie einen beschreibenden Namen für Ihren Arbeitsbereich ein (z.B. "Kunde A", "Forschungsprojekt", "Persönliche Notizen")
+4. Klicken Sie auf "Erstellen", um den Vorgang abzuschließen
+
+## Organisation von Arbeitsbereichen
+
+Jeder Arbeitsbereich bietet eine übersichtliche, separate Umgebung für Ihre Arbeit:
+
+<CardGroup cols={2}>
+  <Card title="Persönlicher Kontext" icon="user">
+    Jeder Arbeitsbereich behält seinen eigenen Gesprächsverlauf und Kontext bei
+  </Card>
+  <Card title="Thementrennung" icon="folder">
+    Halten Sie verschiedene Themen oder Kundeninformationen sauber getrennt
+  </Card>
+</CardGroup>
+
+## Arbeitsbereich-Einstellungen
+
+Jeder Arbeitsbereich verfügt über grundlegende konfigurierbare Einstellungen:
+
+- **Allgemeine Einstellungen**: Name und Beschreibung des Arbeitsbereichs
+
+## Inhalte organisieren
+
+Innerhalb eines Arbeitsbereichs können Sie Ihre persönlichen Inhalte organisieren:
+
+- **Gespräche**: Greifen Sie auf Ihren Chat-Verlauf zu, der spezifisch für diesen Arbeitsbereich ist
+- **Notizen**: Halten Sie arbeitsbereichsspezifische Informationen organisiert
+- **Kontext**: Pflegen Sie separate Gesprächskontexte für verschiedene Themen
 
 ## Zwischen Arbeitsbereichen wechseln
 
-1. Klicken Sie auf den Arbeitsbereich-Selektor
-2. Wählen Sie den gewünschten Arbeitsbereich
-3. Ihr Kontext wechselt sofort
+Sie können einfach zwischen verschiedenen Arbeitsbereichen wechseln:
 
-## Anwendungsfälle
+1. Klicken Sie auf den Arbeitsbereich-Selektor im Benutzerbereich oder in der oberen Navigationsleiste
+2. Wählen Sie den gewünschten Arbeitsbereich aus dem Dropdown-Menü
+3. Ihr Kontext wechselt sofort zum ausgewählten Arbeitsbereich
 
-- **Kundenverwaltung**: Separate Bereiche für verschiedene Kunden
-- **Thementrennung**: Arbeit und persönliche Recherche getrennt halten
-- **Kontextwechsel**: Schnell zwischen Themenbereichen wechseln
+Diese Funktion ist besonders nützlich, wenn Sie mit verschiedenen Kunden oder Wissensdatenbanken arbeiten, da sie es Ihnen ermöglicht, schnell zwischen verschiedenen Kontexten zu wechseln, ohne Informationen zu vermischen.
+
+## Anwendungsfälle für Arbeitsbereiche
+
+Arbeitsbereiche sind ideal für:
+
+- **Kundenverwaltung**: Erstellen Sie separate Arbeitsbereiche für verschiedene Kunden, um deren Informationen organisiert zu halten
+- **Organisation von Wissensdatenbanken**: Pflegen Sie unterschiedliche Arbeitsbereiche für verschiedene Wissensdatenbanken, Assistenten oder Prompts
+- **Thementrennung**: Halten Sie arbeitsbezogene Anfragen getrennt von persönlicher Recherche
+- **Kontextwechsel**: Wechseln Sie schnell zwischen verschiedenen Themenbereichen, ohne den Kontext zu verlieren
 
 ## Best Practices
 
-- **Zweckspezifische Bereiche** erstellen
-- **Beschreibende Namen** verwenden
-- **Regelmäßig aufräumen** und nicht benötigte Bereiche löschen
+Für optimale Arbeitsbereichsverwaltung:
 
-## Nächste Schritte
-
-<CardGroup>
-  <Card 
-    title="Wissensdatenbank" 
-    icon="database" 
-    href="/features/Wissensdatenbank"
-  >
-    Erstellen Sie arbeitsbereichsspezifische Wissensdatenbanken
-  </Card>
-  <Card 
-    title="Assistenten" 
-    icon="robot" 
-    href="/features/assistants"
-  >
-    Konfigurieren Sie Assistenten für verschiedene Arbeitsbereiche
-  </Card>
-  <Card 
-    title="Benutzeraktivität" 
-    icon="chart-line" 
-    href="/features/user-activity"
-  >
-    Verfolgen Sie Ihre Aktivitäten in verschiedenen Arbeitsbereichen
-  </Card>
-</CardGroup>
+- **Erstellen Sie zweckspezifische Arbeitsbereiche**: Widmen Sie Arbeitsbereiche bestimmten Kunden, Wissensdatenbanken oder Themen
+- **Verwenden Sie beschreibende Namen**: Wählen Sie klare, aussagekräftige Namen, die den Zweck des Arbeitsbereichs angeben
+- **Regelmäßiges Aufräumen**: Archivieren oder löschen Sie Arbeitsbereiche, die nicht mehr benötigt werden
+- **Begrenzen Sie die Anzahl der Arbeitsbereiche**: Pflegen Sie nur so viele Arbeitsbereiche, wie Sie effektiv verwalten können

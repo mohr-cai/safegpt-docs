@@ -1,43 +1,100 @@
 ---
-title: 'Bewährte Prompting-Praktiken'
+title: 'Prompting Best Practices'
 description: 'Bewährte Praktiken für effektive Prompts in BusinessGPT'
 ---
 
-## Grundlagen
+## Grundlagen des Promptings
 
-Effektive Prompts sind der Schlüssel zu besseren Ergebnissen mit BusinessGPT. Ein gut strukturierter Prompt führt zu präziseren und nützlicheren Antworten.
+Effektive Prompts sind der Schlüssel zu besseren Ergebnissen mit BusinessGPT. Ein gut strukturierter Prompt führt zu präziseren, relevanteren und nützlicheren Antworten.
 
 ## Struktur eines guten Prompts
 
-1. **Klare Rolle definieren**: "Du bist ein erfahrener Marketingexperte..."
-2. **Kontext bereitstellen**: Relevante Hintergrundinformationen angeben
-3. **Spezifische Aufgabe**: Präzise formulieren, was gewünscht ist
-4. **Format angeben**: Gewünschte Struktur der Antwort spezifizieren
+### 1. Klare Rollenverteilung
+Definieren Sie die Rolle, die die KI übernehmen soll:
+
+```
+Du bist ein erfahrener Marketingexperte. Analysiere die folgende Kampagne...
+```
+
+### 2. Kontext bereitstellen
+Geben Sie relevante Hintergrundinformationen:
+
+```
+Unser Unternehmen ist ein B2B-Softwareanbieter mit 50 Mitarbeitern. 
+Wir entwickeln CRM-Lösungen für kleine und mittlere Unternehmen.
+```
+
+### 3. Spezifische Aufgabe definieren
+Formulieren Sie Ihre Anfrage präzise:
+
+```
+Erstelle eine Checkliste mit 10 Punkten für die Einführung unserer Software bei Neukunden.
+```
+
+### 4. Gewünschtes Format angeben
+Spezifizieren Sie, wie die Antwort strukturiert sein soll:
+
+```
+Formatiere die Antwort als nummerierte Liste mit jeweils einer kurzen Erklärung pro Punkt.
+```
 
 ## Bewährte Techniken
 
-### Häufige Fehler vermeiden
+### Chain of Thought (Schritt-für-Schritt-Denken)
+Bitten Sie die KI, ihre Denkweise zu erklären:
 
-- **❌ Zu vage**: "Schreibe etwas über Marketing"
-- **✅ Spezifisch**: "Erstelle eine 5-Punkte-Strategie für Social Media Marketing"
+```
+Erkläre Schritt für Schritt, wie du zu dieser Lösung gekommen bist.
+```
 
-- **❌ Fehlender Kontext**: "Wie kann ich das verbessern?"
-- **✅ Mit Kontext**: "Wie kann ich diese E-Mail-Kampagne verbessern? [Text einfügen]"
+### Few-Shot Learning (Beispiele geben)
+Stellen Sie Beispiele für das gewünschte Ergebnis bereit:
 
-## BusinessGPT-spezifische Tipps
+```
+Hier sind zwei Beispiele für gute Produktbeschreibungen:
+1. [Beispiel 1]
+2. [Beispiel 2]
+
+Erstelle nun eine ähnliche Beschreibung für unser Produkt.
+```
+
+### Iterative Verfeinerung
+Verfeinern Sie Ihre Prompts basierend auf den Ergebnissen:
+
+```
+Das ist gut, aber kannst du es spezifischer für unsere Zielgruppe machen?
+```
+
+## Häufige Fehler vermeiden
+
+### ❌ Zu vage Anfragen
+**Schlecht:** "Schreibe etwas über Marketing"
+**Besser:** "Erstelle eine 5-Punkte-Strategie für Social Media Marketing für B2B-Unternehmen"
+
+### ❌ Fehlender Kontext
+**Schlecht:** "Wie kann ich das verbessern?"
+**Besser:** "Wie kann ich diese E-Mail-Kampagne verbessern? [E-Mail-Text einfügen]"
+
+### ❌ Mehrere Aufgaben in einem Prompt
+**Schlecht:** "Analysiere den Markt, erstelle eine Strategie und schreibe einen Businessplan"
+**Besser:** Teilen Sie dies in separate, fokussierte Prompts auf
+
+## Spezielle Techniken für BusinessGPT
 
 ### Wissensdatenbanken nutzen
+Verweisen Sie auf hochgeladene Dokumente:
+
 ```
-Basierend auf dem hochgeladenen Handbuch, erkläre die wichtigsten Funktionen.
+Basierend auf dem hochgeladenen Handbuch, erkläre die wichtigsten Funktionen unserer Software.
 ```
 
-### Modellauswahl
-- **GPT-4o**: Komplexe Analysen und kreative Aufgaben
-- **Claude**: Nuancierte Textverarbeitung und längere Dokumente
-- **Schnellere Modelle**: Einfache Fragen und Zusammenfassungen
+### Modellauswahl optimieren
+- **GPT-4o**: Für komplexe Analysen und kreative Aufgaben
+- **Claude**: Für nuancierte Textverarbeitung und längere Dokumente
+- **Schnellere Modelle**: Für einfache Fragen und Zusammenfassungen
 
-### Slashbefehle
-Nutzen Sie `/[Suchbegriff]` für schnellen Zugriff auf Prompts.
+### Slashbefehle einsetzen
+Nutzen Sie `/[Suchbegriff]` um schnell auf Prompts und Wissensdatenbanken zuzugreifen.
 
 ## Prompt-Templates
 
@@ -45,47 +102,94 @@ Nutzen Sie `/[Suchbegriff]` für schnellen Zugriff auf Prompts.
 ```
 Rolle: [Expertenrolle]
 Kontext: [Hintergrundinformationen]
-Aufgabe: Analysiere [Element]
-Format: [gewünschte Struktur]
+Aufgabe: Analysiere [zu analysierendes Element]
+Fokus: Konzentriere dich besonders auf [spezifische Aspekte]
+Format: Strukturiere die Antwort als [gewünschtes Format]
 ```
 
 ### Erstellungs-Template
 ```
-Erstelle [Inhaltsart] für [Zielgruppe]
-Stil: [Ton/Stil]
-Länge: [Wortanzahl]
-Struktur: [Gliederung]
+Erstelle [Art des Inhalts] für [Zielgruppe]
+Stil: [gewünschter Ton/Stil]
+Länge: [ungefähre Wortanzahl]
+Struktur: [gewünschte Gliederung]
+Besondere Anforderungen: [spezifische Vorgaben]
 ```
 
-## Best Practices
+### Überarbeitungs-Template
+```
+Überarbeite den folgenden Text:
+[Originaltext]
 
-- **Persona-basiert**: Detaillierte Rollen für konsistente Ergebnisse
-- **Constraint-basiert**: Bewusste Grenzen für fokussierte Antworten
-- **Multi-Step**: Komplexe Aufgaben in Schritte aufteilen
-- **Iterativ**: Prompts basierend auf Ergebnissen verfeinern
+Verbesserungen:
+- [spezifische Verbesserungswünsche]
+- [weitere Anforderungen]
 
-## Nächste Schritte
+Zielgruppe: [Beschreibung der Zielgruppe]
+```
 
-<CardGroup>
-  <Card 
-    title="Promptbibliotheken" 
-    icon="book" 
-    href="/features/prompt-libraries"
-  >
-    Erstellen und verwalten Sie wiederverwendbare Prompts
-  </Card>
-  <Card 
-    title="Assistenten" 
-    icon="robot" 
-    href="/features/assistants"
-  >
-    Konfigurieren Sie Assistenten mit optimierten Systemprompts
-  </Card>
-  <Card 
-    title="Wissensdatenbank" 
-    icon="database" 
-    href="/features/Wissensdatenbank"
-  >
-    Nutzen Sie Dokumente als Kontext für bessere Prompts
-  </Card>
-</CardGroup>
+## Erweiterte Strategien
+
+### Persona-basiertes Prompting
+Erstellen Sie detaillierte Personas für konsistente Ergebnisse:
+
+```
+Du bist Sarah, eine 35-jährige Marketingmanagerin mit 10 Jahren Erfahrung 
+in der Tech-Branche. Du bist analytisch, aber auch kreativ und achtest 
+besonders auf ROI-Optimierung.
+```
+
+### Constraint-basiertes Prompting
+Setzen Sie bewusst Grenzen für fokussiertere Ergebnisse:
+
+```
+Erkläre das Konzept in maximal 3 Sätzen, verwende keine Fachbegriffe 
+und richte es an Personen ohne Vorerfahrung.
+```
+
+### Multi-Step Prompting
+Teilen Sie komplexe Aufgaben in Schritte auf:
+
+```
+Schritt 1: Analysiere die Daten
+Schritt 2: Identifiziere die 3 wichtigsten Trends
+Schritt 3: Entwickle Handlungsempfehlungen für jeden Trend
+```
+
+## Qualitätskontrolle
+
+### Ergebnisse bewerten
+- Ist die Antwort vollständig?
+- Entspricht sie dem gewünschten Format?
+- Ist sie für die Zielgruppe angemessen?
+- Sind alle wichtigen Punkte abgedeckt?
+
+### Iterative Verbesserung
+```
+Das ist ein guter Start. Kannst du Punkt 3 detaillierter ausführen 
+und ein konkretes Beispiel hinzufügen?
+```
+
+## Tipps für verschiedene Anwendungsfälle
+
+### Geschäftsdokumente
+- Verwenden Sie professionelle Sprache
+- Strukturieren Sie klar mit Überschriften
+- Bitten Sie um Quellenangaben bei Fakten
+
+### Kreative Inhalte
+- Geben Sie Stil und Ton vor
+- Verwenden Sie inspirierende Beispiele
+- Experimentieren Sie mit verschiedenen Ansätzen
+
+### Technische Dokumentation
+- Definieren Sie das Erfahrungslevel der Zielgruppe
+- Bitten Sie um Schritt-für-Schritt-Anleitungen
+- Fordern Sie Beispiele und Codeblöcke an
+
+### Datenanalyse
+- Stellen Sie den Kontext der Daten bereit
+- Definieren Sie spezifische Analyseziele
+- Bitten Sie um visualisierbare Ergebnisse
+
+Durch die Anwendung dieser Best Practices können Sie die Qualität und Relevanz der Antworten von BusinessGPT erheblich verbessern und effizienter arbeiten.
