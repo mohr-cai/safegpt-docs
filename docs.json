@@ -58,7 +58,7 @@
                     "icon": "robot",
                     "pages": [
                       "features/Assistent",
-                      "features/prompt-libraries"
+                      "features/Promptbibliothek"
                     ]
                   }
                 ]
