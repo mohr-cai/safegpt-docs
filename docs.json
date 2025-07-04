@@ -41,7 +41,7 @@
                     "icon": "comments",
                     "pages": [
                       "features/chat",
-                      "features/Gedächtnis",
+                      "features/Memory",
                       "features/Websuche"
                     ]
                   },
