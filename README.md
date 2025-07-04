@@ -3,8 +3,6 @@
 Dieses Repository enthält die Dokumentation für BusinessGPT powered by Eraneos. Die Dokumentation umfasst:
 
 - Produktfunktionen und -fähigkeiten
-- API-Referenz
-- Sicherheits- und Compliance-Informationen
 - Erste Schritte Anleitungen
 
 ### Entwicklung
