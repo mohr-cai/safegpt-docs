@@ -19,25 +19,25 @@
   "navigation": {
     "anchors": [
       {
-        "anchor": "Dokumentation",
+        "anchor": "Documentation",
         "icon": "book-open",
         "tabs": [
           {
-            "tab": "Produkt",
+            "tab": "Product",
             "groups": [
               {
-                "group": "Einführung",
+                "group": "Introduction",
                 "icon": "book-open-reader",
                 "pages": [
                   "index"
                 ]
               },
               {
-                "group": "Kernfunktionen",
+                "group": "Core Features",
                 "icon": "star",
                 "pages": [
                   {
-                    "group": "Chat & Interaktion",
+                    "group": "Chat & Interaction",
                     "icon": "comments",
                     "pages": [
                       "features/chat",
@@ -46,7 +46,7 @@
                     ]
                   },
                   {
-                    "group": "Dokumentenmanagement",
+                    "group": "Document Management",
                     "icon": "file-lines",
                     "pages": [
                       "features/Dokumentenverarbeitung",
@@ -54,7 +54,7 @@
                     ]
                   },
                   {
-                    "group": "Assistenten & Prompts",
+                    "group": "Assistants & Prompts",
                     "icon": "robot",
                     "pages": [
                       "features/Assistent",
@@ -64,7 +64,7 @@
                 ]
               },
               {
-                "group": "Organisation & Verwaltung",
+                "group": "Organization & Administration",
                 "icon": "folder-tree",
                 "pages": [
                   "features/Arbeitsbereiche",
@@ -72,7 +72,7 @@
                 ]
               },
               {
-                "group": "Hilfe",
+                "group": "Help",
                 "icon": "circle-question",
                 "pages": [
                   "features/faq",
@@ -85,7 +85,7 @@
             "tab": "Settings",
             "groups": [
               {
-                "group": "Sicherheit",
+                "group": "Security",
                 "icon": "shield-halved",
                 "pages": [
                   "security/overview",
@@ -93,7 +93,7 @@
                 ]
               },
               {
-                "group": "Rechtliches",
+                "group": "Legal",
                 "icon": "scale-balanced",
                 "pages": [
                   "settings/Nutzungsbedingungen"
@@ -105,7 +105,7 @@
             "tab": "Changelog",
             "groups": [
               {
-                "group": "Versionshistorie",
+                "group": "Version History",
                 "icon": "clock-rotate-left",
                 "pages": [
                   "changelog"
