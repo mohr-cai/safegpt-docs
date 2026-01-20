@@ -93,6 +93,13 @@
                 ]
               },
               {
+                "group": "Service & Support",
+                "icon": "handshake",
+                "pages": [
+                  "settings/service-management"
+                ]
+              },
+              {
                 "group": "Legal",
                 "icon": "scale-balanced",
                 "pages": [
